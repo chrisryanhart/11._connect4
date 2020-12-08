@@ -1,30 +1,99 @@
 /* game board table */
+body{
+  background-color: lightblue;
+}
+
+button{
+  /* display: flex;
+  position: absolute;
+  left: 46vw; */
+}
+
+h1{
+  text-align: center;
+}
+
+.boardDesign{
+  /* background-color: yellow; */
+  /* position: absolute;
+  left: 50px;right: 50px;width: 50px;height: 50px;
+  box-shadow: 0 0 0 99999px rgba(0, 0, 0, .8); */
+  /* z-index: 10; */
+  border-radius: 100%;
+  background-color: white;
+  z-index: 5;
+}
+
+/* .boardDesign::after{
+  background: white;
+  border-radius: 40px;
+  border: 1px solid #aaa;
+  content: '';
+  cursor: pointer;
+    height: 200px;
+    width: 200px;
+} */
+
+#board{
+  /* position: absolute; */
+  /* left: 50%; */
+  /* margin: auto; */
+  display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+border-collapse: separate;
+text-align: center;
+}
+
+/* #board tr{
+  border-collapse: collapse;
+} */
+#game{
+  text-align: center;
+}
 
 #board td {
   width: 50px;
   height: 50px;
-  border: solid 1px #666;
+  border: solid .5px #666;
+  /* border-radius: 40px; */
+  margin: 5px;
+  border-spacing: 0px;
+  /* background-color: yellow; */
+  /* border-collapse: separate; */
 }
 
 /* pieces are div within game table cells: draw as colored circles */
 
 div .p1 {
   /* TODO: make into circles */
-  margin: 5px;
-  width: 80%;
-  height: 80%;
+  /* margin: 5px; */
+  width: 100%;
+  height: 100%;
   background-color: blue;
   border-radius: 40px;
+  align-items: center;
 }
 
 div .p2 {
   /* TODO: make into circles */
-  margin: 5px;
-  width: 80%;
-  height: 80%;
+  /* margin: 5px; */
+  width: 100%;
+  height: 100%;
   background-color: red;
   border-radius: 40px;
 
+}
+
+tr.color{
+  background-color: yellow;
+  border: solid 1px gray;
+  float: top;
+  /* border-color: black; */
+  box-shadow: inset 7px, 7px, 20px, gray;
+  border-collapse: col;
+  z-index: 5px;
 }
 
 /* TODO: make pieces red/blue,  depending on player 1/2 piece */
@@ -33,6 +102,10 @@ div .p2 {
 
 #column-top td {
   border: dashed 1px lightgray;
+  background-color: yellow;
+  opacity: 0.5;
+
+  
 }
 
 #column-top td:hover {

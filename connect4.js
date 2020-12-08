@@ -61,9 +61,13 @@ function makeHtmlBoard() {
   //Creates cells for the board based on the width and height
   for (let y = 0; y < HEIGHT; y++) {
     const row = document.createElement("tr");
+    row.setAttribute('class','color');
     for (let x = 0; x < WIDTH; x++) {
       const cell = document.createElement("td");
+      // const hole = 
       cell.setAttribute("id", `${y}-${x}`);
+      //assign class to add CSS styling for board
+      cell.setAttribute('class','boardDesign');
       row.append(cell);
     }
     htmlBoard.append(row);
@@ -77,7 +81,6 @@ function findSpotForCol(x) {
   // TODO: write the real version of this, rather than always returning 0
 
   for(let j= HEIGHT-1; j>=0; j--){
-    // console.log(board[j][x]);
     if(board[j][x]===null){
       return j;
     }
@@ -104,8 +107,6 @@ function placeInTable(y, x) {
   
   const td = document.getElementById(`${y}-${x}`);
   td.append(div);
-
-  console.log('Here is my div:', td);
 
 }
 
@@ -151,7 +152,7 @@ function handleClick(evt) {
 
   // check for tie
   // TODO: check if all cells in board are filled; if so call, call endGame
-  const boardState = board.every(row => num.every(num => num !== null));
+  const boardState = board.every(row => row.every(num => num !== null));
 
   //stops game and sends alert if board is full
   if(boardState){
